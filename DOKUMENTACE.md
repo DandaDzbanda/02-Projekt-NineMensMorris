@@ -1,5 +1,5 @@
 # 02-Projekt-NineMensMorris
-#Dokumentace pro hru Mlýny
+## Dokumentace pro hru Mlýny
 Tento kód je převedení deskové hry Mlýny do prostředí WPF. Hlavní třída je MainWindow, která řídí celou hru a uživatelské rozhraní. Když se hra spustí, vytvoří se nová instance pomocí třídy Game. V MainWindow jsou metody pro aktualizaci UI a zpracování kliknutí na hrací desce.
 
 Když hráč klikne na nějakou pozici na desce, metoda Position_Click zkontroluje, jestli tah je platný a podle toho aktualizuje UI. Hra má dvě hlavní fáze: umisťování kamenů a pohyb kamenů. Pokud je hráč ve fázi umisťování kamenů, může umístit nový kámen na volné místo. Pokud je ve fázi pohybu, může přesunout svůj kámen na sousední volné místo.

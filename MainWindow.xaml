@@ -1,0 +1,68 @@
+<Window x:Class="_07_WPF_Projekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_07_WPF_Projekt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="600" Background="Beige">
+    <Grid>
+        <!--Vrchní menu-->
+        <TextBlock Name="CurrentPlayerTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="16"/>
+        <TextBlock Name="PhaseTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,10,0,0" FontSize="16"/>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,70,0,0">
+            <TextBlock Name="Player1PiecesTextBlock" />
+            <TextBlock Name="Player2PiecesTextBlock" />
+        </StackPanel>
+        <!--Čáry-->
+        <Grid Height="600">
+        <Line X1="50" Y1="50" X2="550" Y2="50" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="50" Y1="50" X2="50" Y2="550" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="550" Y1="50" X2="550" Y2="550" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="50" Y1="550" X2="550" Y2="550" Stroke="Black" StrokeThickness="2"/>
+
+        <Line X1="150" Y1="150" X2="150" Y2="450" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="450" Y1="150" X2="450" Y2="450" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="150" Y1="450" X2="450" Y2="450" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="150" Y1="150" X2="450" Y2="150" Stroke="Black" StrokeThickness="2"/>
+
+        <Line X1="250" Y1="250" X2="350" Y2="250" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="250" Y1="250" X2="250" Y2="350" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="350" Y1="250" X2="350" Y2="350" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="250" Y1="350" X2="350" Y2="350" Stroke="Black" StrokeThickness="2"/>
+
+        <Line X1="300" Y1="50" X2="300" Y2="250" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="50" Y1="300" X2="250" Y2="300" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="350" Y1="300" X2="550" Y2="300" Stroke="Black" StrokeThickness="2"/>
+        <Line X1="300" Y1="350" X2="300" Y2="550" Stroke="Black" StrokeThickness="2"/>
+        </Grid>
+        <!--Kolečka které slouží pro hraní-->
+        <Canvas Name="BoardCanvas" Width="600" Height="600" Background="Transparent">
+            <Ellipse Name="Pos0" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="40" Canvas.Top="40" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos1" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="290" Canvas.Top="40" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos2" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="540" Canvas.Top="40" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos3" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="540" Canvas.Top="290" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos4" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="540" Canvas.Top="540" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos5" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="290" Canvas.Top="540" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos6" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="40" Canvas.Top="540" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos7" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="40" Canvas.Top="290" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos8" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="140" Canvas.Top="140" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos9" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="290" Canvas.Top="140" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos10" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="440" Canvas.Top="140" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos11" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="440" Canvas.Top="290" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos12" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="440" Canvas.Top="440" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos13" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="290" Canvas.Top="440" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos14" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="140" Canvas.Top="440" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos15" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="140" Canvas.Top="290" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos16" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="240" Canvas.Top="240" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos17" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="290" Canvas.Top="240" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos18" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="340" Canvas.Top="240" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos19" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="340" Canvas.Top="290" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos20" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="340" Canvas.Top="340" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos21" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="290" Canvas.Top="340" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos22" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="240" Canvas.Top="340" MouseLeftButtonDown="Position_Click"/>
+            <Ellipse Name="Pos23" Width="20" Height="20" Fill="Transparent" Stroke="Black" StrokeThickness="2" Canvas.Left="240" Canvas.Top="290" MouseLeftButtonDown="Position_Click"/>
+        </Canvas>
+        
+    </Grid>
+</Window>
